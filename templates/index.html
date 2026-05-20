@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum Mundial</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>⚽ Álbum del Mundial ❤️</h1>
+
+    <div class="contenedor">
+
+        {% for jugador in jugadores %}
+        <div class="card">
+
+            <img src="{{ url_for('static', filename='img/' + jugador.imagen) }}" alt="foto">
+
+            <h2>{{ jugador.nombre }}</h2>
+
+            <p>{{ jugador.descripcion }}</p>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>
